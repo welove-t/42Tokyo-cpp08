@@ -3,34 +3,40 @@
 #include <vector>
 #include <list>
 
+template <typename T>
+void	test(T& container)
+{
+	container.push_back(1);
+	container.push_back(2);
+	container.push_back(3);
+	container.push_back(4);
+	container.push_back(5);
+
+	try
+	{
+		for (int i = 4; i <= 6; i++)
+		{
+			std::cout << "Search Value: " << i << " -> "<< std::flush;
+			typename T::iterator it = easyfind(container, i);
+			std::cout <<  "Found Value: " << GREEN <<  *it << RESET <<  std::endl;
+		}
+	}
+	catch (const std::runtime_error& e)
+	{
+		std::cout << RED <<  e.what() << RESET <<  std::endl;
+	}
+}
+
+
 int main() {
-	// Using easyfind with std::vector
+
+	std::cout << BLUE << "[ Vector Test ]" << RESET << std::endl;
 	std::vector<int> myVector;
-	myVector.push_back(1);
-	myVector.push_back(2);
-	myVector.push_back(3);
-	myVector.push_back(4);
-	myVector.push_back(5);
+	test(myVector);
 
-	try{
-		std::vector<int>::iterator it = easyfind(myVector, 2);
-		std::cout << "Found value: " << *it << std::endl;
-	} catch (const std::runtime_error& e) {
-		std::cout << e.what() << std::endl;
-	}
-
-	// Using easyfind with std::list
+	std::cout << BLUE << "[ List Test ]" << RESET << std::endl;
 	std::list<int> myList;
-	myList.push_back(40);
-	myList.push_back(50);
-	myList.push_back(60);
-
-	try {
-		std::list<int>::iterator it = easyfind(myList, 50);
-		std::cout << "Found value: " << *it << std::endl;
-	} catch (const std::runtime_error& e) {
-		std::cout << e.what() << std::endl;
-	}
+	test(myList);
 
 	return 0;
 }
