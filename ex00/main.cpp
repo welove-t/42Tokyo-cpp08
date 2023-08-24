@@ -2,16 +2,12 @@
 #include <iostream>
 #include <vector>
 #include <list>
+#include <set>
+#include <deque>
 
 template <typename T>
 void	test(T& container)
 {
-	container.push_back(1);
-	container.push_back(2);
-	container.push_back(3);
-	container.push_back(4);
-	container.push_back(5);
-
 	try
 	{
 		for (int i = 4; i <= 6; i++)
@@ -27,17 +23,27 @@ void	test(T& container)
 	}
 }
 
-
 int main() {
 
-	std::cout << BLUE << "[ Vector Test ]" << RESET << std::endl;
-	std::vector<int> myVector;
+	int myArray[] = {1, 2, 3, 4, 5};
+
+	std::cout << BLUE << "[ Vector ]" << RESET << std::endl;
+	std::vector<int> myVector(myArray, myArray + sizeof(myArray) / sizeof(int));
 	test(myVector);
 
-	std::cout << BLUE << "[ List Test ]" << RESET << std::endl;
-	std::list<int> myList;
+	std::cout << BLUE << "[ List ]" << RESET << std::endl;
+	std::list<int> myList(myArray, myArray + sizeof(myArray) / sizeof(int));
 	test(myList);
 
+	std::cout << BLUE << "[ Set ]" << RESET << std::endl;
+	std::set<int> mySet(myArray, myArray + sizeof(myArray) / sizeof(int));
+	test(mySet);
+
+	std::cout << BLUE << "[ Deque ]" << RESET << std::endl;
+	std::deque<int> myDeque(myArray, myArray + sizeof(myArray) / sizeof(int));
+	test(myDeque);
+
+	std::cout << BLUE << "\n[ Leaks Check ]" << RESET << std::endl;
 	return 0;
 }
 
