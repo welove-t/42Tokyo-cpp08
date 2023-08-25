@@ -23,7 +23,8 @@ class Span
 		Span(const Span& rhs);
 		Span& operator=(const Span& rhs);
 
-		void	addNumber(int num);
+		void	addNumber(int value);
+		void	addNumber(int value, int num);
 		int		shortestSpan();
 		int		longestSpan();
 
