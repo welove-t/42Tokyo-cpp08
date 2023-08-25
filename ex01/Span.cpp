@@ -35,6 +35,21 @@ Span& Span::operator=(const Span& rhs)
 void	Span::addNumber(int num)
 {
 	if (_vec.size() >= _maxSize )
-		throw std::runtime_error("Cannot be added to span");
+		throw std::runtime_error("Cannot be added to SPAN.");
 	_vec.push_back(num);
+}
+
+int	Span::shortestSpan(void)
+{
+	if (_vec.size() < 2)
+		throw std::runtime_error("There is too little content in SPAN.");
+	std::sort(_vec.begin(), _vec.end());
+	int shortSpan = std::numeric_limits<int>::max();
+	for (std::vector<int>::iterator it = _vec.begin(); it != _vec.end() - 1; it++)
+	{
+		int span = *(it + 1) - *it;
+		shortSpan = span < shortSpan ? span : shortSpan;
+	}
+	return shortSpan;
+
 }

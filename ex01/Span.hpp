@@ -24,6 +24,7 @@ class Span
 		Span& operator=(const Span& rhs);
 
 		void	addNumber(int num);
+		int		shortestSpan();
 
 };
 
