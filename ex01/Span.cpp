@@ -51,5 +51,11 @@ int	Span::shortestSpan(void)
 		shortSpan = span < shortSpan ? span : shortSpan;
 	}
 	return shortSpan;
+}
 
+int		Span::longestSpan()
+{
+	if (_vec.size() < 2)
+		throw std::runtime_error("There is too little content in SPAN.");
+	return *(std::max_element(_vec.begin(), _vec.end())) - *(std::min_element(_vec.begin(), _vec.end()));
 }
