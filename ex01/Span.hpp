@@ -23,6 +23,8 @@ class Span
 		Span(const Span& rhs);
 		Span& operator=(const Span& rhs);
 
+		void	addNumber(int num);
+
 };
 
 

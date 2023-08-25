@@ -30,3 +30,11 @@ Span& Span::operator=(const Span& rhs)
 	_maxSize = rhs._maxSize;
 	return *this;
 }
+
+/* Function */
+void	Span::addNumber(int num)
+{
+	if (_vec.size() >= _maxSize )
+		throw std::runtime_error("Cannot be added to span");
+	_vec.push_back(num);
+}
