@@ -41,7 +41,7 @@ void	Span::addNumber(int value)
 
 void	Span::addNumber(int value, int num)
 {
-	if (_vec.size() + num >= _maxSize )
+	if (_vec.size() + num > _maxSize )
 		throw std::runtime_error("Cannot be added to SPAN.");
 	_vec.insert(_vec.end(), num, value);
 }
