@@ -2,7 +2,8 @@
 #define MUTANTSTACK_HPP
 
 #include <iostream>
-#include <vector>
+#include <stack>
+#include <deque>
 
 #define RED		"\e[0;31m" // Red
 #define GREEN	"\e[0;32m" // Green
@@ -10,18 +11,27 @@
 #define BLUE	"\e[0;34m" // Blue
 #define RESET 	"\e[0m"    // Reset
 
-class MutantStack
-{
-	private:
+template <typename T, typename Container = std::deque<T> >
+class MutantStack : public std::stack<T, Container> {
+public:
+	typedef typename Container::iterator iterator;
 
-	public:
-		MutantStack();
-		MutantStack(unsigned int N);
-		~MutantStack();
+	MutantStack() : std::stack<T, Container>() {}
+	MutantStack(const MutantStack& rhs) : std::stack<T, Container>(rhs) {}
+	~MutantStack() {}
 
-		MutantStack(const MutantStack& rhs);
-		MutantStack& operator=(const MutantStack& rhs);
+	MutantStack& operator=(const MutantStack& rhs) {
+		std::stack<T, Container>::operator=(rhs);
+		return *this;
+	}
 
+	iterator begin() {
+		return this->c.begin();
+	}
+
+	iterator end() {
+		return this->c.end();
+	}
 };
 
 
