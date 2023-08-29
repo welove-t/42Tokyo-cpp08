@@ -15,8 +15,8 @@ int main() {
 		sp1.addNumber(17);
 		sp1.addNumber(9);
 		sp1.addNumber(11);
-		std::cout << sp1.shortestSpan() << std::endl;
-		std::cout << sp1.longestSpan() << std::endl;
+		std::cout << "shortestSpan: " << sp1.shortestSpan() << std::endl;
+		std::cout << "longestSpan : " << sp1.longestSpan() << std::endl;
 	}
 	catch(std::exception& e)
 	{
@@ -36,8 +36,8 @@ int main() {
 		sp2.addNumber(2);
 		sp2.addNumber(100, 10000);
 
-		std::cout << sp2.shortestSpan() << std::endl;
-		std::cout << sp2.longestSpan() << std::endl;
+		std::cout << "shortestSpan: " << sp2.shortestSpan() << std::endl;
+		std::cout << "longestSpan : " << sp2.longestSpan() << std::endl;
 	}
 	catch(std::exception& e)
 	{
@@ -58,8 +58,8 @@ int main() {
 		sp3.addNumber(100, 10000);
 		sp3.addNumber(1);
 
-		std::cout << sp3.shortestSpan() << std::endl;
-		std::cout << sp3.longestSpan() << std::endl;
+		std::cout << "shortestSpan: " << sp3.shortestSpan() << std::endl;
+		std::cout << "longestSpan : " << sp3.longestSpan() << std::endl;
 	}
 	catch(std::exception& e)
 	{
@@ -77,8 +77,8 @@ int main() {
 	{
 		sp4.addNumber(1);
 
-		std::cout << sp4.shortestSpan() << std::endl;
-		std::cout << sp4.longestSpan() << std::endl;
+		std::cout << "shortestSpan: " << sp4.shortestSpan() << std::endl;
+		std::cout << "longestSpan : " << sp4.longestSpan() << std::endl;
 	}
 	catch(std::exception& e)
 	{

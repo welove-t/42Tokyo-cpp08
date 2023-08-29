@@ -4,6 +4,7 @@
 #include <iostream>
 #include <stack>
 #include <deque>
+#include <list>
 
 #define RED		"\e[0;31m" // Red
 #define GREEN	"\e[0;32m" // Green
